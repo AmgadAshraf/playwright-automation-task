@@ -6,6 +6,7 @@ export class CartPage{
     readonly title;
     readonly removeBackPack;
     readonly removeBikeLight;
+    readonly removeBoltTshirt;
     readonly cartItems;
 
 
@@ -15,6 +16,7 @@ export class CartPage{
         this.title = page.locator('.title')
         this.removeBackPack = page.locator('#remove-sauce-labs-backpack')
         this.removeBikeLight = page.locator('#remove-sauce-labs-bike-light')
+        this.removeBoltTshirt = page.locator('#remove-sauce-labs-bolt-t-shirt')
         this.cartItems = page.locator('.cart_item .inventory_item_name');
     }
 
@@ -25,6 +27,7 @@ export class CartPage{
    async removingProductsFromCart(){
         await this.removeBackPack.click()
         await this.removeBikeLight.click()
+        await this.removeBoltTshirt.click()
     }
 
     async verifyItemsMatch(expectedItems: string[]) {
@@ -32,5 +35,9 @@ export class CartPage{
         for (const item of expectedItems) {
         expect(cartItemTexts).toContain(item);
   }
+  }
+
+  async verifyCartIsEmpty() {
+    await expect(this.cartItems).toHaveCount(0);
   }
 }

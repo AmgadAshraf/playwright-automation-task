@@ -17,4 +17,5 @@ test('Remove Products from cart', async({page})=>{
     await productsPage.addingProductsToCart()
     await productsPage.navigatingToCartPage()
     await cartPage.removingProductsFromCart()
+    await cartPage.verifyCartIsEmpty()
 })

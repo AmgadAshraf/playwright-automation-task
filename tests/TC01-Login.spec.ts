@@ -9,4 +9,5 @@ test.beforeEach(async({page}) =>{
 test('Login with Valid Credentials', async({page}) =>{
     const loginPage = new LoginPage(page)
     await loginPage.login('standard_user','secret_sauce')
+    await expect(page.locator('.title')).toHaveText('Products')
 })
