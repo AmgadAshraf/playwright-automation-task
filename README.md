@@ -18,10 +18,10 @@ This task contains end-to-end tests for [Sauce Demo](https://www.saucedemo.com) 
 git clone https://github.com/AmgadAshraf/playwright-automation-task
 cd <project-folder>
 
-2.Install prject dependencies
+2.Install prject dependencies:
 npm install
 
-3.Install Playwright browsers
+3.Install Playwright browsers:
 npx playwright install
 
 
@@ -43,7 +43,7 @@ npx playwright test --ui
 To view the HTML report: 
 npx playwright test --reporter=html
 
-To Open the latest HTML report
+To Open the latest HTML report:
 npx playwright show-report
 
 
